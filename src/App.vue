@@ -1,28 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <main id="app">
+    <img alt="Vue logo" class="brand" src="./assets/logo.png" />
+    <h1 class="title">Vue Todo List</h1>
+    <TodoList />
+    <p class="github-link">
+      <a href="https://github.com/ruegen/vue-todo">github repo</a>
+    </p>
+  </main>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import TodoList from "./components/TodoList.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    TodoList
   }
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  background: dimgray;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.brand {
+  width: 8em;
+}
+
+h1.title {
+  color: #aaa;
+}
+
+.github-link {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  font-size: 0.5em;
 }
 </style>
