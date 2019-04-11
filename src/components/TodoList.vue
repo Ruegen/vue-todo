@@ -26,9 +26,6 @@ import { setTimeout } from "timers";
 
 export default {
   name: "TodoList",
-  props: {
-    msg: String
-  },
   data() {
     return {
       todos: JSON.parse(localStorage.getItem("todos:vue")) || []
@@ -57,7 +54,6 @@ export default {
     toggleTodoComplete(id) {
       this.todos = this.todos.map(t => {
         if (t.id === id) {
-          console.log(id, t.completed);
           t.completed = !t.completed;
           return t;
         }
