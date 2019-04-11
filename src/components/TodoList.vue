@@ -1,7 +1,7 @@
 <template>
   <section>
     <form v-on:submit.prevent="addTodo" class="todo-form">
-      <input type="text" name="title" />
+      <input type="text" name="title">
     </form>
     <ul class="todo-list">
       <li v-for="todo in todos" :key="todo.id">
@@ -13,7 +13,7 @@
           type="text"
           v-bind:class="{ 'completed': todo.completed }"
           v-model="todo.title"
-        />
+        >
         <button class="button-delete" v-on:click="deleteTodo(todo)">Delete</button>
       </li>
     </ul>
@@ -34,7 +34,7 @@ export default {
   watch: {
     todos: {
       handler: (oldTodos, newTodos) => {
-        localStorage.setItem("todos:vue", JSON.stringify(newTodos))
+        localStorage.setItem("todos:vue", JSON.stringify(newTodos));
       },
       deep: true
     }
@@ -44,12 +44,12 @@ export default {
       const title = e.target.title.value;
       if (!title) return;
       const todo = createTodo(title);
-      this.todos.unshift(todo)
+      this.todos.unshift(todo);
       e.target.reset();
     },
     deleteTodo(todo) {
-      const index = this.todos.indexOf(todo)
-      this.$delete(this.todos, index)
+      const index = this.todos.indexOf(todo);
+      this.$delete(this.todos, index);
     },
     toggleTodoComplete(id) {
       this.todos = this.todos.map(t => {
